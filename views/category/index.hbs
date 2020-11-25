@@ -1,0 +1,36 @@
+{{#section 'title'}}
+    <b>Categories</b>
+{{/section}}
+
+<div class="row">
+	<div class="col-sm-8 col-md-8 col-lg-8">
+		<table class="table table-hover">
+			<thead>
+				<tr>
+					<th>ID</th>
+					<th>Name</th>
+					<th class="text-right"><a class="btn btn-success" href="/category/add" role="button">
+			<span class="glyphicon glyphicon-plus"></span>
+			Add
+		</a></th>
+				</tr>
+			</thead>
+			<tbody>
+				{{#each categories}}
+				<tr>
+					<td>{{CatID}}</td>
+					<td>{{CatName}}</td>
+					<td class="text-right">
+						<a class="btn btn-default btn-xs" href="/category/delete?id={{CatID}}" role="button">
+							<span class="glyphicon glyphicon-remove"></span>
+						</a>
+						<a class="btn btn-default btn-xs" href="/category/edit?id={{CatID}}" role="button">
+							<span class="glyphicon glyphicon-pencil"></span>
+						</a>
+					</td>
+				</tr>
+				{{/each}}
+			</tbody>
+		</table>
+	</div>
+</div>

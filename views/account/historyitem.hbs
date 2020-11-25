@@ -1,0 +1,32 @@
+{{#section 'title'}}
+    Lịch sử đơn hàng
+{{/section}}
+
+{{#if NoMessage}}
+	<div class="row" style="margin-top: 10px; text-align: center">
+		<p>Hiện tại bạn chưa mua san phẩm nào<p>
+	</div>
+{{else}}	
+	<div class="row" style="margin: 10px 10px; border: 1px solid black">
+		<div class="col-sm-12 col-md-12 col-lg-12">
+			<table class="table table-hover">
+				<thead>
+					<tr>
+						<th>Tên xe</th>
+						<th>Số lượng</th>
+						<th>Ngày mua</th>
+					</tr>
+				</thead>
+				<tbody>
+					{{#each items}}
+					<tr>
+						<td>{{ProName}}</td>
+						<td>{{ProQuantity}}</td>
+						<td>{{DateBuy}}</td>
+					</tr>
+					{{/each}}
+				</tbody>
+			</table>
+		</div>
+	</div>
+{{/if}}

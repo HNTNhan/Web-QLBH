@@ -1,0 +1,52 @@
+{{#section 'title'}}
+    <b>Products</b>
+{{/section}}
+
+<div class="row">
+	<div class="col-sm-12 col-md-12 col-lg-12">
+		<table class="table table-hover">
+			<thead>
+				<tr>
+					<th>ID</th>
+					<th>Name</th>
+					<th>Price</th>
+					<th>Quantity</th>
+					<th>Viewed</th>
+					<th>Sold</th>
+					<th>Origin</th>
+					<th>Species</th>
+					<th>Firm</th>
+					<th>Arrive</th>
+					<th class="text-right"><a class="btn btn-success" href="/product/add" role="button">
+			<span class="glyphicon glyphicon-plus"></span>
+			Add
+		</a></th>
+				</tr>
+			</thead>
+			<tbody>
+				{{#each products}}
+				<tr>
+					<td>{{ProID}}</td>
+					<td>{{ProName}}</td>
+					<td>{{number_format Price}}</td>
+					<td>{{Quantity}}</td>
+					<td>{{Viewed}}</td>
+					<td>{{Sold}}</td>
+					<td>{{Origin}}</td>
+					<td>{{Species}}</td>
+					<td>{{Firm}}</td>
+					<td>{{Arrive}}</td>
+					<td class="text-right">
+						<a class="btn btn-default btn-xs" href="/product/delete?id={{ProID}}" role="button">
+							<span class="glyphicon glyphicon-remove"></span>
+						</a>
+						<a class="btn btn-default btn-xs" href="/product/edit?id={{ProID}}" role="button">
+							<span class="glyphicon glyphicon-pencil"></span>
+						</a>
+					</td>
+				</tr>
+				{{/each}}
+			</tbody>
+		</table>
+	</div>
+</div>

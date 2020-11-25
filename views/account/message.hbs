@@ -1,0 +1,20 @@
+{{#section 'title'}}
+    Thông báo của bạn
+{{/section}}
+
+{{#if NoMessage}}
+	<div class="row" style="margin-top: 10px; text-align: center">
+		<p>Hiện tại bạn không có thông báo nào<p>
+	</div>
+{{else}}	
+	{{#each messages}}
+		<div class="row" style="margin: 10px 10px; border: 1px solid black">
+			<div class="col-md-12" style="text-align: center">
+				<h4>Title: {{TitleMsg}}<h4>
+			</div>
+			<div class="col-md-12" style="text-align: center">
+				<p>{{ContentMsg}}<p>
+			</div>
+		</div>
+	{{/each}}	
+{{/if}}

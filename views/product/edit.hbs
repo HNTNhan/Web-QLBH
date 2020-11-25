@@ -1,0 +1,40 @@
+{{#section 'title'}}
+    <b>Edit category</b>
+{{/section}}
+
+{{#with Product}}
+<form action="" method="POST" role="form">
+	<div class="form-group">
+		<label for="">ProID</label>
+		<input type="text" class="form-control" id="" name="ProID" readonly value="{{ProID}}">
+	</div>
+	<div class="form-group">
+		<label for="">Product Name</label>
+		<input type="text" class="form-control" id="" name="ProName" placeholder="Input field" value="{{ProName}}">
+		<label for="">Price</label>
+		<input type="text" class="form-control" id="" name="Price" placeholder="Input field" value="{{Price}}">
+		<label for="">Quantity</label>
+		<input type="text" class="form-control" id="" name="Quantity" placeholder="Input field" value="{{Quantity}}">
+		<label for="">Viewed</label>
+		<input type="text" class="form-control" id="" name="Viewed" placeholder="Input field" value="{{Viewed}}">
+		<label for="">Sold</label>
+		<input type="text" class="form-control" id="" name="Sold" placeholder="Input field" value="{{Sold}}">
+		<label for="">Origin</label>
+		<input type="text" class="form-control" id="" name="Origin" placeholder="Input field" value="{{Origin}}">
+		<label for="">Species</label>
+		<input type="text" class="form-control" id="" name="Species" placeholder="Input field" value="{{Species}}">
+		<label for="">Firm</label>
+		<input type="text" class="form-control" id="" name="Firm" placeholder="Input field" value="{{Firm}}">
+		<label for="">Arrive</label>
+		<input type="text" class="form-control" id="" name="Arrive" placeholder="Input field" value="{{Arrive}}">
+	</div>
+	<a class="btn btn-default" href="/product" role="button">
+		<span class="glyphicon glyphicon-arrow-left"></span>
+		Back
+	</a>
+	<button type="submit" class="btn btn-primary">
+		<span class="glyphicon glyphicon-ok"></span>
+		Update
+	</button>
+</form>
+{{/with}}

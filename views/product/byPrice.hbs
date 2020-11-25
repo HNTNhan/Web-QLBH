@@ -1,0 +1,70 @@
+{{#section 'title'}}
+	Danh sách sản phẩm
+{{/section}}
+
+{{#section 'js'}}
+<script type="text/javascript">
+	$('.addItem').on('click', function() {
+	    var id = $(this).data('proid');
+	    $('#txtP').val(id);
+	    $('#txtQ').val(1);
+	    $('#frmAddItem').submit();
+	});
+</script>
+{{/section}}
+
+{{#if noProducts}}
+<div class="row" style="margin-top: 10px; margin-bottom: 10px">
+	<div class="col-sm-12 col-md-12 col-lg-12">
+		Không có sản phẩm thoả yêu cầu.
+	</div>
+</div>
+{{else}}
+<div class="row" style="margin-top: 10px; margin-bottom: 10px">
+	<form id="frmAddItem" method="post" action="/cart/add">
+		<input type="hidden" name="proId" id="txtP">
+		<input type="hidden" name="quantity" id="txtQ">
+	</form>
+	{{#each products}}
+	<div class="col-sm-6 col-md-4">
+		<div class="thumbnail">
+			<img src="/sp/{{ProID}}/main_thumbs.jpg" alt="{{ProName}}" title="{{ProName}}" style="height: 168px">
+			<div class="caption" style="text-align: center; padding-right: 0px; padding-left: 0px">
+				<h4>{{ProName}}</h4>
+				<h4>{{number_format Price}}đ</h4>
+				<p>
+					<a href="/product/detail/{{ProID}}" class="btn btn-primary" role="button">
+						<span class="glyphicon glyphicon-eye-open"></span>
+						View Details
+					</a>
+					{{#if ../layoutVM.isLogged}}
+					<a data-proid="{{ProID}}" href="javascript:;" class="btn btn-danger addItem" role="button">
+						<span class="glyphicon glyphicon-shopping-cart"></span>
+					</a>
+					{{/if}}
+				</p>
+			</div>
+		</div>
+	</div>
+	{{/each}}
+</div>
+<div style="text-align: center">
+	<ul class="pagination">
+		<li>
+			<a href="?page=1" aria-label="Previous"><span aria-hidden="true">«</span></a>
+		</li>
+		{{#each page_numbers}}
+			{{#if isCurPage}}
+				<li class="active"><a href="">{{value}}</a></li>
+			{{else}}
+				<li><a href="?page={{value}}">{{value}}</a></li>
+			{{/if}}
+		{{/each}}
+		{{#with max_page}}
+		<li>
+			<a href="?page={{max}}" aria-label="Next"><span aria-hidden="true">»</span></a>
+		</li>
+		{{/with}}
+	</ul>
+</div>
+{{/if}}

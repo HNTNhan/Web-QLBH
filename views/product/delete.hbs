@@ -1,0 +1,21 @@
+{{#section 'title'}}
+    <b>Delete category</b>
+{{/section}}
+
+<div class="alert alert-info" style="margin: 10px 10px">
+	<strong>Confirm!</strong> Remove product ??
+</div>
+
+<form action="" method="POST" role="form" style="margin: 10px 10px">
+	<div class="form-group">
+		<input type="hidden" id="" name="ProID" value="{{ProID}}">
+	</div>
+	<a class="btn btn-default" href="/product" role="button">
+		<span class="glyphicon glyphicon-arrow-left"></span>
+		Back
+	</a>
+	<button type="submit" class="btn btn-primary">
+		<span class="glyphicon glyphicon-ok"></span>
+		Delete
+	</button>
+</form>

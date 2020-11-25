@@ -1,0 +1,34 @@
+{{#section 'title'}}
+    <b>Edit user</b>
+{{/section}}
+
+{{#with User}}
+<form action="" method="POST" role="form">
+	<div class="form-group">
+		<label for="">ID</label>
+		<input type="text" class="form-control" id="" name="ID" readonly value="{{ID}}">
+	</div>
+	<div class="form-group">
+		<label for="">Username</label>
+		<input type="text" class="form-control" id="" name="Username" placeholder="Input field" value="{{Username}}">
+		<label for="">Password</label>
+		<input type="text" class="form-control" id="" name="Password" placeholder="Input field" value="{{Password}}">
+		<label for="">Name</label>
+		<input type="text" class="form-control" id="" name="Name" placeholder="Input field" value="{{Name}}">
+		<label for="">Email</label>
+		<input type="text" class="form-control" id="" name="Email" placeholder="Input field" value="{{Email}}">
+		<label for="">Dateofbirth</label>
+		<input type="text" class="form-control" id="" name="DOB" placeholder="Input field" value="{{DOB}}">
+		<label for="">Permission</label>
+		<input type="text" class="form-control" id="" name="Permission" placeholder="Input field" value="{{Permission}}">
+	</div>
+	<a class="btn btn-default" href="/user" role="button">
+		<span class="glyphicon glyphicon-arrow-left"></span>
+		Back
+	</a>
+	<button type="submit" class="btn btn-primary">
+		<span class="glyphicon glyphicon-ok"></span>
+		Update
+	</button>
+</form>
+{{/with}}

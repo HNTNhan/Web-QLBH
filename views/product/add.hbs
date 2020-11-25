@@ -1,0 +1,41 @@
+{{#section 'title'}}
+    <b>Add product</b>
+{{/section}}
+
+{{#if showAlert}}
+<div class="alert alert-success">
+	<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+	<strong>OK!</strong> Product added.
+</div>
+{{/if}}
+
+<form action="" method="POST" role="form" class="col-md-6"> 
+	<div class="form-group">
+		<label for="">Product Name</label>
+		<input type="text" class="form-control" id="" name="ProName" placeholder="Audi A5 Sport" required="ProName">
+		<label for="">Price</label>
+		<input type="text" class="form-control" id="" name="Price" placeholder="2040000000" required="Price">
+		<label for="">Quantity</label>
+		<input type="text" class="form-control" id="" name="Quantity" placeholder="100" required="Quantity">
+		<label for="">Viewed</label>
+		<input type="text" class="form-control" id="" name="Viewed" placeholder="882" required="Viewed">
+		<label for="">Sold</label>
+		<input type="text" class="form-control" id="" name="Sold" placeholder="102" required="Sold">
+		<label for="">Origin</label>
+		<input type="text" class="form-control" id="" name="Origin" placeholder="Đức" required="Origin">
+		<label for="">Species</label>
+		<input type="text" class="form-control" id="" name="Species" placeholder="Car" required="Species">
+		<label for="">Firm</label>
+		<input type="text" class="form-control" id="" name="Firm" placeholder="Audi" required="Firm">
+		<label for="">Arrive</label>
+		<input type="text" class="form-control" id="" name="Arrive" placeholder="20/5/2018" required="Arrive">
+	</div>
+	<a class="btn btn-default" href="/product" role="button">
+		<span class="glyphicon glyphicon-arrow-left"></span>
+		Back
+	</a>
+	<button type="submit" class="btn btn-primary">
+		<span class="glyphicon glyphicon-ok"></span>
+		Add
+	</button>
+</form>

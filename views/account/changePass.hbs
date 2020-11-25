@@ -1,0 +1,83 @@
+{{#section 'title'}}
+    Đổi mật khẩu
+{{/section}}
+
+
+{{#section 'js'}}
+	<script>
+	    function limitPass1(){
+	        var limit = 20;
+	        var getTextValue = document.getElementById("txtOPWD").value;
+	        var getTextLength = getTextValue.length;
+	        if(getTextLength > limit){     
+	            getTextValue = getTextValue.substring(0, limit);
+	            document.getElementById("txtOPWD").value = getTextValue;
+	        }
+	    }
+
+	    function limitPass2(){
+	        var limit = 20;
+	        var getTextValue = document.getElementById("txtPWD").value;
+	        var getTextLength = getTextValue.length;
+	        if(getTextLength > limit){     
+	            getTextValue = getTextValue.substring(0, limit);
+	            document.getElementById("txtPWD").value = getTextValue;
+	        }
+	    }
+
+	    function limitPass3(){
+	        var limit = 20;
+	        var getTextValue = document.getElementById("txtAPWD").value;
+	        var getTextLength = getTextValue.length;
+	        if(getTextLength > limit){     
+	            getTextValue = getTextValue.substring(0, limit);
+	            document.getElementById("txtAPWD").value = getTextValue;
+	        }
+	    }
+	</script>
+{{/section}}
+
+
+{{#if showError}}
+<div class="row" style="margin-top: 10px">
+    <div class="alert alert-danger" style="text-align: center">
+    	<p class="close" data-dismiss="alert" aria-hidden="true">&times;</p>
+    	{{errorMsg}}
+    </div>
+</div>
+{{/if}}
+
+<div class="row">
+	<div class="col-sm-12 col-md-12 col-lg-12">
+		<form action="" method="POST" role="form" class="form-horizontal" style="margin-top: 10px">
+			<div class="form-group">
+		        <label for="txtPWD" class="col-sm-2 control-label">Password cũ</label>
+		        <div class="col-sm-4">
+		            <input type="password" class="form-control" id="txtOPWD" placeholder="Password" name="oldPWD" required="oldPWD" onkeyup="return limitPass1();">
+		        </div>
+		        <p for="txtOPWD" class="col-sm-3 control-label">Password không quá 20 ký tự!</p>
+		    </div>
+		    <div class="form-group">
+		        <label for="txtPWD" class="col-sm-2 control-label">Password mới</label>
+		        <div class="col-sm-4">
+		            <input type="password" class="form-control" id="txtPWD" placeholder="Password" name="rawPWD" required="rawPWD" onkeyup="return limitPass();">
+		        </div>
+		    </div>
+		    <div class="form-group">
+		        <label for="txtPWD" class="col-sm-2 control-label">Nhập lại Password</label>
+		        <div class="col-sm-4">
+		            <input type="password" class="form-control" id="txtAPWD" placeholder="Password" name="againPWD" required="againPWD" onkeyup="return limitPass3();">
+		        </div>
+		    </div>
+		    <div style="text-align: center">
+		    	<div class="col-sm-2"></div>
+		    	<div class="col-sm-4">
+					<button type="submit" class="btn btn-primary">
+						<span class="glyphicon glyphicon-ok"></span>
+						Cập nhật
+					</button>
+				</div>
+			</div>
+		</form>
+	</div>
+</div>
